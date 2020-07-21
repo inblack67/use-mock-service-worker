@@ -4,20 +4,20 @@
 
 - **use-mock-service-worker** is a testing hook which consumes Mock Service Worker API and takes care of all the configuration we have to do while testing ajax calls via mocking the service worker.
 
-- **use-mock-service-worker** only plays along with **GET** requests, yet.
+- **use-mock-service-worker** only plays along with **GET** requests, **one** at a time.
 
 - Whenever we make a http request, **use-mock-service-worker** intercepts that request before it goes out to internet and then responds with whatever our API's expected response is. This way we can test Ajax calls without making an external http request.
 
 ### Installation
 
 ```sh
-yarn add use-mock-service-worker
+yarn add -D use-mock-service-worker
 ```
 
 **or**
 
 ```sh
-npm i use-mock-service-worker
+npm i -D use-mock-service-worker
 
 ```
 
