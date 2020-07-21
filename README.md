@@ -27,8 +27,10 @@ npm i use-mock-service-worker
 
 // index.test.js
 
-import fetchData from '../src/fetchData'
 import { loadTestServer } from 'use-mock-service-worker'
+
+// our actual Ajax call method
+import fetchData from '../src/fetchData'
 
 // target API
 const url = 'https://jsonplaceholder.typicode.com/posts';
@@ -59,6 +61,7 @@ describe('useMockServiceWorker', () => {
   });
 
   it('GET Data ', async () => {
+    // mocking actual request, will be intercepted by use-mocker-service-worker though.
     const res = await fetchData(url);
     expect(res.data[0].userId).toEqual(1);
     expect(res.data[0].id).toEqual(1);
