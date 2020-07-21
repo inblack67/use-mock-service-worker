@@ -61,8 +61,11 @@ describe('useMockServiceWorker', () => {
   });
 
   it('GET Data ', async () => {
-    // mocking actual request, will be intercepted by use-mocker-service-worker though.
+    // making actual request via our fetchData method
     const res = await fetchData(url);
+    // but the request will be intercepted by use-mocker-service-worker and won't go out in the internet world.
+
+    // and they must pass!
     expect(res.data[0].userId).toEqual(1);
     expect(res.data[0].id).toEqual(1);
     expect(res.data[0].title).toEqual("sunt aut facere repellat provident occaecati excepturi optio reprehenderit");
