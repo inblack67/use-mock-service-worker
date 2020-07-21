@@ -1,11 +1,15 @@
 import fetchData from '../src/fetchData'
-// import postData from '../src/postData'
 import { loadTestServer } from '../src/index'
 
-const url = 'https://data.ct.gov/resource/y6p2-px98.json?category=Fruit&item=Peaches';
+const url = 'https://jsonplaceholder.typicode.com/posts';
 
 const dataExpected = [
-  { category: 'Fruit', item: 'Peaches', location_1: { type: 'Point', coordinates: [-79.402352, 45.649393] } }
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
 ];
 
 const server = loadTestServer(url, dataExpected);
@@ -23,24 +27,8 @@ describe('useMockServiceWorker', () => {
 
   it('GET Data ', async () => {
     const res = await fetchData(url);
-    expect(res.data[0].category).toEqual('Fruit');
-    expect(res.data[0].location_1).toEqual({type: 'Point', coordinates: [-79.402352, 45.649393]});
+    expect(res.data[0].userId).toEqual(1);
+    expect(res.data[0].id).toEqual(1);
+    expect(res.data[0].title).toEqual("sunt aut facere repellat provident occaecati excepturi optio reprehenderit");
   });
-
-  // it('POST Data ', async () => {
-  //   const formData = {
-  //     userId: '69',
-  //     title: 'oka',
-  //     body: 'oka'
-  //   }
-  //   const config = {
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }
-  //   const res = await postData(url, formData, config);
-  //   expect(res.data[0].category).toEqual('Fruit');
-  //   expect(res.data[0].location_1).toEqual({type: 'Point', coordinates: [-79.402352, 45.649393]});
-  // });
-
 });

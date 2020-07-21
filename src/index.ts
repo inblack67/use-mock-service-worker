@@ -18,6 +18,5 @@ export const loadTestServer = (targetURL: string, expectedData: any) => {
           )
         })
       );
-      
       return server;
 }
