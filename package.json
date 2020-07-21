@@ -18,17 +18,6 @@
     "prepare": "tsdx build"
   },
   "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
   "name": "use-mock-service-worker",
   "author": "Aman",
   "module": "dist/use-mock-service-worker.esm.js",
