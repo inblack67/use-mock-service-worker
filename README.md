@@ -8,6 +8,8 @@
 
 - Whenever we make a http request, **use-mock-service-worker** intercepts that request before it goes out to internet and then responds with whatever our API's expected response is. This way we can test Ajax calls without making an external http request.
 
+- See fully working [example](https://github.com/inblack67/mock-server).
+
 ### Installation
 
 ```sh
